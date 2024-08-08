@@ -1,0 +1,126 @@
+/*https://www.fontrepo.com/font/29649/minecraft*/
+
+/*https://www.geeksforgeeks.org/how-to-include-a-font-ttf-using-css
+
+https://stackoverflow.com/questions/52088484/chrome-failed-to-decode-downloaded-font-ots-parsing-error-post-failed-to-parse
+https://transfonter.org/*/
+
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('Minecraft.eot');
+  src: url('Minecraft.eot') format('embedded-opentype'),
+      url('Minecraft.woff2') format('woff2'),
+      url('Minecraft.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  font-family: 'Minecraft';
+}
+
+body {
+  background-color: rgb(249, 210, 216);
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#scoreDisplay {
+height: auto;
+}
+
+#gameBoard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; 
+  justify-content: center; 
+  max-width: 800px; 
+  margin: 0 auto; 
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  
+}
+
+.buttons {
+  display: grid;
+  place-items: center;  
+  height:auto;
+}
+
+button {
+  text-decoration: none;
+  box-shadow: 5px 0 5px  #828181;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 3px 10px 3px 10px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  height: 3rem;
+  width: 10rem;
+  font-size: 1.25rem;
+}
+
+button:hover {
+  filter: brightness(0.85);
+}
+
+button:active {
+  box-shadow: 5px 0 5px #666;
+  transform: translateY(4px);
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px; /* Added for the 3D flip effect */
+  flex: 0 0 100px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card-front {
+  background-size: cover;
+  background-position: center;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.fade-out {
+  transition: opacity 2s ease-out;
+  opacity: 0 !important;
+}
