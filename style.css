@@ -80,10 +80,11 @@ button:active {
 }
 
 .card {
-  width: 100px;
-  height: 100px;
+  width: min(calc(100vh/5), calc(100vw/5)); 
+
+  height: min(calc(100vh/5), calc(100vw/5));
   perspective: 1000px; /* Added for the 3D flip effect */
-  flex: 0 0 100px;
+  /* flex: 0 0 100px; */
 }
 
 .card-inner {
